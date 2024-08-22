@@ -1,0 +1,39 @@
+package tw.teacher.poker;
+
+public class PokerV1 {
+
+	public static void main(String[] args) {
+		long start = System.currentTimeMillis();
+		// 洗牌
+		int[] poker = new int[52];
+		for (int i = 0; i < poker.length; i++) {
+			
+			int temp = (int)(Math.random() * 52);
+			
+			// 檢查重複機制
+			boolean isRepeat = false;
+			for (int j = 0; j < i; j++) {
+				if (temp == poker[j]) {
+					isRepeat = true;
+					break;
+				}
+			}
+			if (!isRepeat) {
+				poker[i] = temp;
+				System.out.println(poker[i]);
+			} else {
+				i--;
+			}
+		}
+		System.out.println("------");
+		System.out.println(System.currentTimeMillis() - start);
+		
+		
+		// 發牌
+
+		
+		// 攤牌 + 理牌
+
+	}
+
+}
